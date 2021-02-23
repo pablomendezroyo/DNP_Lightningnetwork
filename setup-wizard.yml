@@ -14,9 +14,10 @@ fields:
       type: environment
       name: UI_PASSWORD
       service: rtl
-      pattern: '^.{8,}$'
-      patternErrorMessage: 'Minimum eight characters, at least one letter and one number'
+    pattern: '^.{8,}$'
+    patternErrorMessage: 'Minimum eight characters, at least one letter and one number'
     description: Add a new password for the UI
+    required: true
 
   - title: Mainnet or testnet
     id: mainnet-testnet
@@ -24,7 +25,8 @@ fields:
       type: environment
       name: MAINNET
       service: lnd
-      enum:
-        - true
-        - false
-    description: Select Mainnet (true) or testnet (false)
+    enum:
+      - 'true'
+      - 'false'
+    description: If set to true the chain will be mainnet, if false will be testnet.
+    required: true
